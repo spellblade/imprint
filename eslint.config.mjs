@@ -15,6 +15,8 @@ export default tseslint.config(
       ".nitro/**",
       "node_modules/**",
       "src/routeTree.gen.ts",
+      "src/lib/app-data/**",
+      "src/lib/auth/**",
     ],
   },
   js.configs.recommended,
@@ -40,6 +42,14 @@ export default tseslint.config(
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
       "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
+  {
+    files: ["public/extension/**/*.js"],
+    languageOptions: {
+      globals: {
+        chrome: "readonly",
+      },
     },
   },
   // Disable rules that conflict with Prettier formatting.
