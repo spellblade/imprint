@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Imprint</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="kicker">Imprint</p>
+        <h1 id="page-title">This page</h1>
+      </div>
+      <span id="status-pill" class="pill">Idle</span>
+    </header>
+    <p id="meta" class="meta">Open a form, then scan.</p>
+    <div class="actions">
+      <button id="scan">Scan</button>
+      <button id="fill" class="primary">Fill</button>
+      <button id="save">Save</button>
+    </div>
+    <div id="ask" class="ask hidden">
+      <p class="kicker">Custom field</p>
+      <h2 id="ask-q"></h2>
+      <input id="ask-input" placeholder="Value" />
+      <label class="row">
+        <input id="ask-save" type="checkbox" checked />
+        Save to vault
+      </label>
+      <div class="actions">
+        <button id="ask-go" class="primary">Fill field</button>
+        <button id="ask-skip">Skip</button>
+      </div>
+    </div>
+    <ul id="fields"></ul>
+    <footer>
+      Card numbers, passwords, and legal checkboxes are never filled.
+      <a href="#" id="open-vault">Edit vault</a>
+    </footer>
+    <section id="vault-editor" class="hidden">
+      <h2>Vault</h2>
+      <div id="vault-fields"></div>
+      <div class="add">
+        <input id="new-label" placeholder="Label" />
+        <input id="new-value" placeholder="Value" />
+        <button id="add-field">Add</button>
+      </div>
+    </section>
+    <script src="popup.js"></script>
+  </body>
+</html>

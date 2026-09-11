@@ -1,0 +1,57 @@
+name: Bug Report
+description: Report something that is broken or behaving unexpectedly
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Report
+        Use this form for product bugs. Security issues: see SECURITY.md (do not file publicly).
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened vs what you expected.
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - Playground
+        - Vault / Library
+        - Landing
+        - Chrome / Edge extension
+        - Packaged ZIP / CRX
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Open Playground
+        2. Choose Harbor Market
+        3. Fill from vault
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Project Version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
