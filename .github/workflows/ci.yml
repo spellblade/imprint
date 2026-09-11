@@ -22,7 +22,12 @@ jobs:
       - run: npm run typecheck
       - name: Test
         run: |
-          node --test $(ls scripts/*.test.mjs | grep -v grok-pwa-plugin.test.mjs)
+          node --test \
+            scripts/check-auth-invariant.test.mjs \
+            scripts/preview.test.mjs \
+            scripts/sign-out-plan.test.mjs \
+            scripts/migration-plan.test.mjs \
+            scripts/browser-smoke-verdict.test.mjs
           node --experimental-strip-types --test \
             src/lib/app-data/app-data.test.ts \
             src/lib/app-data/readiness-schedule.test.ts \
